@@ -73,13 +73,13 @@ AS
 			
 		IF((SELECT Set_Time_A FROM inserted) > 3 OR (SELECT Set_Time_B FROM inserted) > 3)
 		BEGIN 
-			RAISERROR('Set N�o Pode Ser Maior Que 3',16,1)
+			RAISERROR('Set Não Pode Ser Maior Que 3',16,1)
 			ROLLBACK TRANSACTION
 		END
 		
 		IF((SELECT Set_Time_A FROM inserted) + (SELECT Set_Time_B FROM inserted) > 5)
 		BEGIN
-			RAISERROR('A Contagem De Sets N�o Pode Ser Maior Que 5',16,1)
+			RAISERROR('A Contagem De Sets Não Pode Ser Maior Que 5',16,1)
 			ROLLBACK TRANSACTION
 		END
 
@@ -103,5 +103,6 @@ INSERT INTO Jogos VALUES
 
 SELECT *FROM Jogos
 DELETE FROM Jogos
+--Este é um comentário
 
 
